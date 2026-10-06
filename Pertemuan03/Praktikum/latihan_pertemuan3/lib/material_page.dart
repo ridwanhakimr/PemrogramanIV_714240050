@@ -18,8 +18,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Text('Ini adalah Home Page'),
+      body: const Center(
+        child: Heading(
+          text: 'Hello ULBI',
+        ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {},
       backgroundColor: Colors.lightBlueAccent,
@@ -29,6 +31,26 @@ class HomePage extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
       ]),
+    );
+  }
+}
+
+class Heading extends StatelessWidget {
+  final String text;
+
+  const Heading({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 28.0,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
